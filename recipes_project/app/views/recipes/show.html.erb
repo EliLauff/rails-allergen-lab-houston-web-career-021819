@@ -1,0 +1,12 @@
+<h1>Recipe Info Page</h1>
+
+<h2>Name: <%=@recipe.name%></h2>
+<%if @recipe.user%>
+    <h2>Author: <%= link_to @recipe.user.name, user_path(@recipe.user) %></h2>
+<%end%>
+<h2>Ingredients: </h2>
+    <ul>
+        <%@recipe.ingredients.each do |i|%>
+            <li><%=i.name%></li>
+        <%end%>
+    </ul>

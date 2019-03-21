@@ -1,0 +1,17 @@
+<h1>User Info Page</h1>
+<h2>Name: <%=@user.name%></h2>
+<h2>Recipes: </h2>
+    <ul>
+        <%@user.recipes.each do |r|%>
+            <li><%=r.name%></li>
+        <%end%>
+    </ul>
+<h2>Allergies: </h2>
+    <ul>
+        <%@user.ingredients.each do |i|%>
+            <li><%=i.name%></li>
+        <%end%>
+    </ul>
+
+<p><%= button_to "Delete User", {:controller => :users,
+      :action => 'destroy', :id => @user.id }, :method => :delete %></p>

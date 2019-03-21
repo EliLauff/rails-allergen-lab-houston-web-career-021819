@@ -1,0 +1,9 @@
+<h1>Recipes Index</h1>
+
+<ul>
+    <%@recipes.each do |r|%>
+        <li><%= link_to r.name, recipe_path(r) %> - <%=pluralize(r.ingredients.length, "ingredient")%></li>
+    <%end%>
+</ul>
+
+<%= link_to 'Create a New Recipe', new_recipe_path %>

@@ -1,0 +1,19 @@
+<h1>Ingredient Info Page</h1>
+<h2>Ingredient Name: <%=@ingredient.name%></h2>
+
+<h2>Users that are Allergic:</h2>
+<%if @ingredient.users != nil%>
+    <ul>
+        <%@ingredient.users.each do |u|%>
+            <li><%= link_to u.name, user_path(u) %></li>
+        <%end%>
+    </ul>
+<%end%>
+<%if @ingredient.users != nil%>
+<h2>Recipes: </h2>
+    <ul>
+        <%@ingredient.recipes.each do |r|%>
+            <li><%= link_to r.name, recipe_path(r) %></li>
+        <%end%>
+    </ul>
+<%end%>
